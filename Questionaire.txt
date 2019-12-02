@@ -1,0 +1,16 @@
+age
+How old are you? 
+gender
+What is your gender? (Male, Female)
+Pragnency
+Do you ever diagnosed with diabetes during pragnency?
+history
+Do you have a mother, father, sister  or brother with diabetes?
+hypertension
+Have you ever been diagnosed with high blood pressure?
+exercises
+Are you physically active?
+Weight
+What is your weight status(in kg)?
+Height
+What is your height status(in cm)?

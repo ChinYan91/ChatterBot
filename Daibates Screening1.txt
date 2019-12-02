@@ -1,0 +1,18 @@
+Hi
+Hello, I am medical assistance bot. Do you like run a diabetes screening?
+Yes, please.
+First, you need to answer a few question.
+Ok.
+How old are you?  (>40,40-49,50-59,<59)
+>40
+What is your gender? (Male, Female) 
+Male.
+Do you have a mother, father, sister or brother with diabetes?
+No.
+Have you ever been diagnosed with high blood pressure?
+Yes.
+Are you physically active?
+Yes
+
+
+ 

@@ -1,0 +1,16 @@
+ I am not feeling well.
+ Okay. can you tell me what's wrong? what are your symptoms?
+ I feeling tired all the times.
+ Do you stay up late very frequent?
+ Not really, I sleep early.
+ Do you phisically active?
+ No, I not doing exercise consistently.
+ Do you experiance increasing hunger, increasing thirsty or frequent urination?
+ Yes, I am getting hungry very quickily lately. 
+ Do you overweight or obese?
+ I am overweight.
+ Do you ever diagnosed with High Blood preassure?
+ Yes, It's was years ago.
+ This might be a symptom of diabetes, you should do a proper medical check up.
+ You should do a proper medical check up.
+  
