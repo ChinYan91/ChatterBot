@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <h1>Medical Chatbot</h1>
+    <h3> web implementation of ChatBot by integrating ChatterBot and Vanilla Flask.</h3>
+    <div>
+      <div id="chatbox">
+        <p class="botText"><span>Bot : Hi, I am medical assistance bot. Do you like run a diabetes screening?</span></p>
+      </div>
+      <div id="userInput">
+        <input id="textInput" type="text" name="msg" placeholder="Message">
+        <input id="buttonInput" type="submit" value="Send">
+      </div>
+	  
+	  <script>
+	  
+	  var Counter =0;
+	  
+        function getBotResponse() {
+          var rawText = $("#textInput").val();
+          var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+          $("#textInput").val("");
+          $("#chatbox").append(userHtml);
+          document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+          $.get("/get", { msg: rawText }).done(function(data) {
+            var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+            $("#chatbox").append(botHtml);
+            document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+          });
+        }
+		
+		function getQuestion(ques_id){
+			var question = ["How old are you?",
+			"What is your gender? (Male, Female)",
+			"Do you ever diagnosed with diabetes during pragnency?",
+			"Do you have a mother, father, sister  or brother with diabetes?",
+			"Have you ever been diagnosed with high blood pressure?",
+			"Are you physically active?",
+			"What is your Height status(in cm)?",
+			"What is your Weight status(in kg)?"];
+			
+			var rawText = $("#textInput").val();
+			//score = score + scoreIncrement(ques_id,rawText);
+			var userHtml = '<p class="userText"><span>' + 'User : ' + rawText + '</span></p>';
+			$("#textInput").val("");
+			$("#chatbox").append(userHtml);
+			document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+					
+			var botHtml = '<p class="botText"><span>' + 'Bot : '+ question[ques_id]+'</span></p>';
+			$("#chatbox").append(botHtml);
+			document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+			
+		}
+		
+		function send(){
+			if(Counter<1){
+					Counter++;
+					getBotResponse();
+				}
+				else if(Counter==1){
+				//age
+					Counter++;
+					getQuestion(0);
+				}
+				else if(Counter==2){
+				//gender
+					Counter++;
+					getQuestion(1);
+				}
+				else if(Counter==3){
+				//pragnancy
+					Counter++;
+					getQuestion(2);
+				}
+				else if(Counter==4){
+				//history
+					Counter++;
+					getQuestion(3);
+				}
+				else if(Counter==5){
+				//hypertension
+					Counter++;
+					getQuestion(4);
+				}
+				else if(Counter==6){
+				//exercises
+					Counter++;
+					getQuestion(5);
+				}
+				else if(Counter==7){
+				//weight
+					Counter++;
+					getQuestion(6);
+				}
+				else if(Counter==8){
+				//height
+					Counter++;
+					getQuestion(7);
+					
+				}
+				else if(Counter==9){
+				//Result
+					Counter++;
+					getResult();
+				}
+				else {
+				//advisorBot
+					Counter++;
+					getBotResponse();
+				}
+		}
+		
+        $("#textInput").keypress(function(e) {
+            if(e.which == 13) {
+                send();
+            }
+        });
+        $("#buttonInput").click(function() {
+          send();
+        })
+      </script>
+    </div>
+  </body>
+</html>
